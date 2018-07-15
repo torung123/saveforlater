@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './customers.css';
 
 class Customers extends Component {
   constructor() {
@@ -21,7 +20,7 @@ class Customers extends Component {
         <h2>Customers</h2>
         <ul>
         {this.state.customers.map(customer => 
-          <li key={customer.id}>{customer.firstName} {customer.lastName}</li>
+          <li key={customer.id}>{customer.first_name} {customer.last_name}</li>
         )}
         </ul>
       </div>

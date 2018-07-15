@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var config = require('config');
+var request = require('request-promise');
 var HaravanAPI = require('../HRVAPI');
 
 /* GET home page. */

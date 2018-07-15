@@ -8,7 +8,7 @@ config = {
     haravan_api_key: '32b258ebca71c3b706d7e0ef37853b6d',
     haravan_shared_secret: 'e08d604dc658fcbc3f5aa2d628a2f151',
     haravan_scope: 'read_customers',
-    redirect_uri: 'http://localhost:3000/finalize',
+    redirect_uri: 'https://localhost:5000/finalize',
     code: 'di389so32hwh28923823dh3289329hdd',
     shop: 'torungshop.myharavan.com',
     timestamp: '1402539839',

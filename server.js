@@ -1,10 +1,14 @@
 var express = require('express');
 var path = require('path');
-var favicon = require('serve-favicon');
+var cors = require('cors');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+// var axios = require('axios');
+
+//Route
 const haravan = require('./routes/haravan');
+const api = require('./routes/api');
 
 //SSH
 var fs = require('fs');
@@ -16,6 +20,9 @@ var certificate = fs.readFileSync('./server.crt', 'utf8');
 var credentials = { key: privateKey, cert: certificate };
 
 var app = express();
+// app.use(express.bodyParser());
+app.use(cors());
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -29,23 +36,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+//install
 app.use('/', haravan);
-
-app.get('/api/customers', (req, res) => {
-    const customers = [
-        { id: 1, firstName: 'John', lastName: 'Doe' },
-        { id: 2, firstName: 'Brad', lastName: 'Traversy' },
-        { id: 3, firstName: 'Mary', lastName: 'Swanson' },
-    ];
-
-    res.json(customers);
-});
+//process API
+app.use('/api', api);
 
 
 const port = 5000;
-
 //app.listen(port, () => `Server running on port ${port}`);
-
 var httpServer = http.createServer(app);
 var httpsServer = https.createServer(credentials, app);
 
