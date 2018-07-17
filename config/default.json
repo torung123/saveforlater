@@ -1,0 +1,10 @@
+{
+  "Apps": {
+    "apikey": "32b258ebca71c3b706d7e0ef37853b6d",
+    "apisecret": "e08d604dc658fcbc3f5aa2d628a2f151",
+    "scope": "read_products,write_products",
+    "apphost": "http://localhost:3000",
+    "redirect_uri": "http://localhost:3000/finalize",
+    "protocol": "https://"
+  }
+}

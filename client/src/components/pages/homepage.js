@@ -19,20 +19,13 @@ export default class homepage extends Component {
         </Segment>
         <Segment basic><Analytic /></Segment>
         <Segment>
-          
           <Header as='h4'>Top sản phẩm thêm vào mua sau <Button basic floated='right' className="shadow-none"><Icon name="ellipsis horizontal"/></Button></Header>
           <TopProduct_Saveforlater />
         </Segment>
+        
+        <TopUser_Saveforlater/>
+        
         <Segment>
-          
-          <Header as='h4'>
-            Top người dùng thêm vào mua sau
-            <Button basic floated='right' className="shadow-none"><Icon name="ellipsis horizontal"/></Button>
-          </Header>
-          <TopUser_Saveforlater/>
-        </Segment>
-        <Segment>
-          
           <Header as='h4'>
               Top sản phẩm thêm vào yêu thích
               <Button basic floated='right' className="shadow-none"><Icon name="ellipsis horizontal"/></Button>
@@ -40,14 +33,12 @@ export default class homepage extends Component {
           <TopProduct_WishList />
         </Segment>
         <Segment loading>
-          
           <Header as='h4'>
             Top người dùng thêm vào yêu thích
             <Button basic floated='right' className="shadow-none"><Icon name="ellipsis horizontal"/></Button>
           </Header>
           <TopUser_WishList/>
         </Segment>
-      
       </div>
     )
   }

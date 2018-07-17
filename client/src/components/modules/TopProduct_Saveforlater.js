@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { List, Image } from 'semantic-ui-react';
 import product from '../images/product.png'
 
-export default class TopProductSaveforlater extends Component {
+export default class TopProduct_Saveforlater extends Component {
     render() {
         return (
             <List horizontal size="medium">

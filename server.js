@@ -4,7 +4,8 @@ var cors = require('cors');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-// var axios = require('axios');
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/dokeapp');
 
 //Route
 const haravan = require('./routes/haravan');
@@ -20,7 +21,7 @@ var certificate = fs.readFileSync('./server.crt', 'utf8');
 var credentials = { key: privateKey, cert: certificate };
 
 var app = express();
-// app.use(express.bodyParser());
+//app.use(express.bodyParser());
 app.use(cors());
 
 
@@ -35,11 +36,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use('/app/scripts', express.static(path.join(__dirname, 'public')));
 
 //install
 app.use('/', haravan);
-//process API
+//xu ly API
 app.use('/api', api);
 
 
